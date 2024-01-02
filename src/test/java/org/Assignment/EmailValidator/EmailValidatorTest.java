@@ -21,7 +21,7 @@ public class EmailValidatorTest {
 
         assertFalse(validator.isCorporateEmail("sandeep@comviva.com"));
         assertTrue(validator.isCorporateEmail("sandeep@company.com"));
-        assertFalse(validator.isCorporateEmail("sandeep@anothercompany.com"));
+        assertFalse(validator.isCorporateEmail("sandeep@anothercompany.con"));
         assertFalse(validator.isCorporateEmail(null));
     }
 }

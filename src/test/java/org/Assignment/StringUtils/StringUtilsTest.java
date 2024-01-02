@@ -39,6 +39,6 @@ public class StringUtilsTest {
 
         assertEquals(2, utils.countOccurrences("hello", 'l'));
         assertEquals(0, utils.countOccurrences("world", 'z'));
-        assertEquals(3, utils.countOccurrences("programming", 'm'));
+        assertEquals(2, utils.countOccurrences("programming", 'm'));
     }
 }
