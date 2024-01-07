@@ -1,0 +1,25 @@
+4-Jan-2024
+~~~~~~~~~~
+selenium is a UI automation tool, mostly used as it is free of cost. Used so that it can give you instant feedback
+about the fucntionality for the given changes in the new build.
+
+headless means it wont open , it will test and revert back the result.
+
+WebDriver is a specification. It defines the way how UI interfaces can be automated. GeckoDriver is the implementation of such specification - it is the WebDriver implementation for Firefox browser.
+
+So basically a WebDriver is a server that exposes REST API to one side and that knows how to control browser on another side.
+
+E2E flow (for Firefox and Java):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+download Selenium java library. It provides Java client for interacting with web drivers
+download GeckoDriver
+In your Java code you call WebDriver driver = new FirefoxDriver();
+Selenium library starts GeckoDriver executable in OS native manner
+In your Java code you call driver.get("http://my.url")
+Selenium library forms REST call to the server that is started with GeckoDriver. It invokes the endpoint according to this section of specification.
+GeckoDriver then translates this command to somewhat that Firefox understands so that the browser navigates to required page.
+So basically you need 3 things to make everything work:
+
+Selenium Java library that is basically a Java client for WebDriver REST API
+GeckoDriver (that implements REST API according to WebDriver specification and translates it to commands which Firefox browse can understand)
+Firefox browser
